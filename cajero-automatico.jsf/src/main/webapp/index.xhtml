@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+    <h:head>
+        <title>Mi Cajero Automático</title>
+    </h:head>
+    <h:body>
+        <h2>🏦 Sistema de Cajero</h2>
+        
+        <h:form>
+            <p>Saldo Actual: <b>$#{cajeroBean.saldo}</b></p>
+            
+            <h:outputLabel value="Monto: " />
+            <h:inputText value="#{cajeroBean.monto}" />
+            
+            <br/><br/>
+            
+            <h:commandButton value="Depositar" action="#{cajeroBean.depositar()}" />
+            <h:commandButton value="Retirar" action="#{cajeroBean.retirar()}" />
+        </h:form>
+        
+    </h:body>
+</f:view>
+</html>
