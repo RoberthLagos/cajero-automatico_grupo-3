@@ -6,7 +6,7 @@ import java.io.Serializable;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 
-@Named("loginBean") // Corregido: 'l' minúscula y 'B' mayúscula
+@Named("loginBean") 
 @SessionScoped
 public class LoginBean implements Serializable {
 
@@ -16,15 +16,19 @@ public class LoginBean implements Serializable {
     private String pinIngresado;
 
     public String ingresar() {
-        // Validación hardcoded
-        if ("1001".equals(cuentaIngresada) && "1234".equals(pinIngresado)) {
+        // Limpiamos la cuenta de guiones y espacios por si acaso
+        String cuentaLimpia = cuentaIngresada.replace("-", "").replace("_", "").trim();
+        
+        // Ahora validamos con un número de cuenta real (16 dígitos) o el tuyo corto
+        if (("1001".equals(cuentaLimpia) || "0000000000001001".equals(cuentaLimpia)) 
+            && "1234".equals(pinIngresado)) {
+            
             return "menu?faces-redirect=true";
         }
 
-        // Mensaje de error si falla
         FacesContext.getCurrentInstance().addMessage(null,
             new FacesMessage(FacesMessage.SEVERITY_ERROR,
-            "ERROR DE ACCESO", "Cuenta o PIN incorrectos"));
+            "ACCESO DENEGADO", "Verifique su Tarjeta y PIN"));
 
         return null;
     }

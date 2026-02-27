@@ -1,0 +1,333 @@
+body {
+    background: radial-gradient(circle, #1b2735 0%, #090a0f 100%);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.atm-container {
+    background: #e0e0e0;
+    padding: 20px;
+    border-radius: 20px;
+    border: 10px solid #2c3e50; /* Marco físico del cajero */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.atm-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    border: 2px solid #bdc3c7;
+}
+
+.atm-header {
+    background: #004b8d; /* Azul bancario */
+    margin: -40px -40px 30px -40px;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+    color: white;
+}
+
+.atm-logo-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #f1c40f; /* Dorado para el logo */
+}
+
+/* Estilo para los inputs de PrimeFaces */
+.ui-inputfield {
+    border: 2px solid #dcdde1 !important;
+    border-radius: 5px !important;
+    padding: 15px !important;
+    font-size: 1.1rem !important;
+    background: #f9f9f9 !important;
+}
+
+/* Botón de Autenticación estilo Cajero */
+.btn-login {
+    background: #27ae60 !important; /* Verde de "Aceptar" */
+    border: none !important;
+    height: 55px !important;
+    font-weight: bold !important;
+    font-size: 1.2rem !important;
+    margin-top: 20px !important;
+    box-shadow: 0 4px #1e8449 !important;
+}
+
+.btn-login:active {
+    box-shadow: 0 2px #1e8449 !important;
+    transform: translateY(2px);
+}
+
+
+
+/* --- RESET GENERAL --- */
+* { box-sizing: border-box; }
+
+body {
+    background: #0f172a; /* Fondo muy oscuro para el exterior */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* --- ESTRUCTURA DEL CAJERO --- */
+
+/* Contenedor principal que centra la máquina */
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* El marco exterior de la máquina (Gris) */
+.atm-frame {
+    background: #2d3436;
+    padding: 25px;
+    border-radius: 40px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+    border: 3px solid #444;
+}
+
+/* La pantalla blanca interna */
+.atm-screen {
+    background: #ffffff !important; /* Fuerza el fondo blanco */
+    width: 380px;
+    height: 600px;
+    border-radius: 10px;
+    border: 15px solid #000000; /* Bisel negro del monitor */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabecera Azul de la Pantalla */
+.screen-header {
+    background: #003366;
+    padding: 20px 10px;
+    text-align: center;
+    color: white;
+}
+
+.logo-text {
+    margin: 10px 0 5px 0;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.status-online {
+    font-size: 0.6rem;
+    color: #4ade80;
+}
+
+/* Área de Contenido Principal (Texto Negro sobre Blanco) */
+.screen-content {
+    padding: 30px 20px;
+    text-align: center;
+    flex-grow: 1; /* Ocupa el espacio disponible */
+}
+
+.welcome-title {
+    color: #003366; /* Texto oscuro */
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.welcome-subtitle {
+    color: #636e72; /* Texto gris */
+    font-size: 0.7rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* --- BASE DEL CAJERO --- */
+body {
+    background: radial-gradient(circle, #1e293b 0%, #020617 100%);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.atm-frame {
+    background: #334155;
+    padding: 25px;
+    border-radius: 40px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+    border: 4px solid #1e293b;
+}
+
+.atm-screen {
+    background: #ffffff !important;
+    width: 380px;
+    height: 620px;
+    border-radius: 10px;
+    border: 12px solid #000000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- HEADER --- */
+.screen-header {
+    background: #003366;
+    padding: 20px 10px;
+    text-align: center;
+    color: white;
+}
+
+.logo-text {
+    margin: 5px 0;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.status-online {
+    font-size: 0.6rem;
+    color: #4ade80;
+}
+
+/* --- CONTENIDO --- */
+.screen-content {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.user-info-card {
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 10px;
+}
+
+/* --- BOTONES ESTILO SHOWCASE --- */
+.menu-button-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.btn-menu {
+    height: 55px !important;
+    border: none !important;
+    transition: all 0.2s cubic-bezier(.4,0,.2,1) !important;
+}
+
+/* Efecto hover suave de PrimeFaces */
+.btn-menu:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+.btn-primary { background: #003366 !important; }
+.btn-success { background: #22c55e !important; }
+.btn-secondary { background: #64748b !important; }
+.btn-danger { background: #ef4444 !important; }
+
+/* Pie de página */
+.screen-footer {
+    padding: 10px;
+    background: #f1f5f9;
+}
+
+
+
+
+
+
+
+
+/* Fuerza el fondo oscuro afuera y blanco adentro */
+body {
+    background-color: #0f172a !important; /* Azul oscuro exterior */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.atm-frame {
+    background: #2d3436; /* Gris del cajero */
+    padding: 25px;
+    border-radius: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+
+.atm-screen {
+    background-color: #ffffff !important; /* BLANCO PURO OBLIGATORIO */
+    width: 380px;
+    height: 600px;
+    border: 12px solid #000; /* Marco negro de pantalla */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Cabecera Azul */
+.screen-header {
+    background: #003366 !important;
+    color: white !important;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo-text { margin: 0; font-size: 1.5rem; }
+
+/* Contenido sobre fondo blanco */
+.screen-content {
+    padding: 20px;
+    background: #ffffff;
+    flex-grow: 1;
+}
+
+.user-info-card {
+    background: #f1f5f9;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Botones de Menú */
+.menu-button-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.btn-menu {
+    height: 55px !important;
+    border: none !important;
+}
+
+.btn-azul { background: #003366 !important; }
+.btn-verde { background: #22c55e !important; }
+.btn-gris { background: #64748b !important; }
+.btn-rojo { background: #ef4444 !important; }
+
+.screen-footer {
+    background: #f8fafc;
+    padding: 15px;
+    text-align: center;
+    font-size: 10px;
+    color: #94a3b8;
+}

@@ -1,47 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-    <title>ATM - Menú Principal</title>
-    <h:outputStylesheet name="css/style.css" />
+    <title>BANK UTH - Cajero Automático</title>
+    <h:outputStylesheet name="style.css" />
 </h:head>
 
 <h:body>
-    <div class="atm-card">
-        <h:form id="loginForm">
-            <p:growl id="messages" showDetail="true" life="4000" />
+    <div class="atm-container">
+        <div class="atm-card">
+            <h:form id="loginForm">
+                <p:growl id="messages" showDetail="true" life="4000" />
 
-            <div class="atm-logo">
-                <i class="pi pi-shield"></i>
-            </div>
-            <h2>BANK UTH</h2>
-            
-            <div class="ui-fluid">
-                <div style="margin-bottom: 25px; text-align: left;">
-                    <p:outputLabel for="cuenta" value="Número de Tarjeta" style="font-size: 12px; color: #aaa; margin-left: 5px;"/>
-                    <p:inputText id="cuenta" value="#{loginBean.cuentaIngresada}" 
-                                 placeholder="0000 0000 0000 0000" required="true" />
+                <div class="atm-header">
+                    <div class="atm-logo-icon">
+                        <i class="pi pi-university" style="font-size: 3rem; color: #f1c40f;"></i>
+                    </div>
+                    <h2 style="margin: 10px 0 5px 0; color: #004b8d; letter-spacing: 2px;">BANK UTH</h2>
+                    <p style="font-size: 0.75rem; color: #7f8c8d; margin-bottom: 25px;">SISTEMA BANCARIO SEGURO</p>
+                </div>
+                
+                <div class="ui-fluid">
+                    <div style="margin-bottom: 20px; text-align: left;">
+                        <p:outputLabel for="cuenta" value="NÚMERO DE TARJETA" 
+                                       style="font-weight: bold; font-size: 0.85rem; color: #2c3e50; margin-left: 2px;"/>
+                        <p:inputMask id="cuenta" value="#{loginBean.cuentaIngresada}" 
+            				 mask="9999" 
+            				 placeholder="INGRESE 1001" 
+            				 required="true" />
+                    </div>
+
+                    <div style="margin-bottom: 15px; text-align: left;">
+                        <p:outputLabel for="pin" value="PIN DE SEGURIDAD" 
+                                       style="font-weight: bold; font-size: 0.85rem; color: #2c3e50; margin-left: 2px;"/>
+                        <p:password id="pin" value="#{loginBean.pinIngresado}" 
+                                    maxlength="4"
+                                    placeholder="****" 
+                                    required="true" 
+                                    toggleMask="true" 
+                                    feedback="false"/>
+                    </div>
                 </div>
 
-                <div style="margin-bottom: 10px; text-align: left;">
-                    <p:outputLabel for="pin" value="PIN de Seguridad" style="font-size: 12px; color: #aaa; margin-left: 5px;"/>
-                    <p:password id="pin" value="#{loginBean.pinIngresado}" 
-                                placeholder="****" required="true" toggleMask="true" />
+                <p:commandButton value="AUTENTICAR CLIENTE" 
+                                 action="#{loginBean.ingresar()}" 
+                                 update="messages" 
+                                 styleClass="btn-login" 
+                                 icon="pi pi-lock" />
+                
+                <div class="atm-footer" style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px;">
+                    <i class="pi pi-shield" style="color: #27ae60; vertical-align: middle;"></i>
+                    <span style="font-size: 10px; color: #95a5a6; margin-left: 5px;">
+                        CONEXIÓN ENCRIPTADA SSL 256-BIT - 2026
+                    </span>
                 </div>
-            </div>
-
-            <p:commandButton value="AUTENTICAR" 
-                 action="#{loginBean.ingresar()}" 
-                 update="messages" 
-                 styleClass="btn-login" 
-                 icon="pi pi-fingerprint" />
-            
-            <p style="margin-top: 25px; font-size: 11px; color: #666;">
-                Conexión segura SSL - 2026
-            </p>
-        </h:form>
+            </h:form>
+        </div>
     </div>
 </h:body>
 </html>
