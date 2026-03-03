@@ -1,0 +1,45 @@
+<ui:composition template="/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title">Depósito de Efectivo - BANK UTH</ui:define>
+
+    <ui:define name="content">
+        <div style="text-align: center; padding: 10px;">
+            <div style="margin-bottom: 15px;">
+                <h2 style="color: #0f172a; margin: 0;">DEPÓSITO DE EFECTIVO</h2>
+                <span style="color: #64748b; font-size: 0.8rem;">Ingrese el monto que desea acreditar a su cuenta</span>
+            </div>
+
+
+            <div style="text-align: left; margin-top: 15px;">
+                <p:outputLabel for="montoDep" value="Monto a Depositar" style="font-weight: bold; color: #334155;"/>
+                <p:inputNumber id="montoDep" value="#{cajerobeans.montoTransaccion}" 
+                               symbol="L " placeholder="0.00" 
+                               style="width: 100%; margin-top: 5px; margin-bottom: 15px;"/>
+
+                <p:outputLabel for="pinDep" value="Confirme su PIN" style="font-weight: bold; color: #334155;"/>
+                <p:password id="pinDep" value="#{cajerobeans.pinIngresado}" 
+                            toggleMask="true" placeholder="****" 
+                            style="width: 100%; margin-top: 5px;"/>
+            </div>
+
+            <div style="margin-top: 25px;">
+                <p:commandButton value="PROCESAR DEPÓSITO" 
+                                 action="#{cajerobeans.depositar()}"
+                                 update="@form"
+                                 style="width:100%; height: 50px; background: #004b8d; border: none; border-radius: 12px; font-weight: bold; color: white;"/>
+                
+                <p:commandButton value="CANCELAR / VOLVER" 
+                                 action="menu?faces-redirect=true" 
+                                 immediate="true"
+                                 styleClass="ui-button-flat"
+                                 style="width:100%; margin-top: 10px; color: #64748b;"/>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

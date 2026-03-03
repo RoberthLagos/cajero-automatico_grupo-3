@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title><ui:insert name="title">BANK UTH</ui:insert></title>
+    <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+    <div class="main-wrapper">
+        <div class="atm-frame">
+            <div class="atm-screen">
+                <h:form id="baseForm">
+                    <p:growl id="messages" showDetail="true" life="3000" />
+
+                    <div class="screen-header">
+                        <i class="pi pi-university" style="font-size: 2.5rem; color: #f1c40f;"></i>
+                        <h1 class="logo-text">BANK <span style="color:#f1c40f">UTH</span></h1>
+                        <div class="status-online">● CONEXIÓN SEGURA</div>
+                    </div>
+
+                    <h:panelGroup rendered="#{cajerobeans.clienteActual != null}">
+                        <div class="user-info-card" style="margin: 10px 20px; display: flex; align-items: center; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+                            <i class="pi pi-user-edit" style="font-size: 1.5rem; color: #003366; margin-right: 12px;"></i>
+                            <div style="text-align: left;">
+                                <span style="display:block; font-size: 0.65rem; color: #64748b; font-weight: bold; text-transform: uppercase;">Usuario Identificado</span>
+                                <span style="font-size: 1rem; font-weight: bold; color: #003366;">
+                                    #{cajerobeans.clienteActual.nombre}
+                                </span>
+                            </div>
+                        </div>
+                    </h:panelGroup>
+
+                    <div class="screen-content">
+                        <ui:insert name="content" />
+                    </div>
+
+                    <div class="screen-footer">
+                        <span>SISTEMA PROTEGIDO POR BANK UTH SECURE™ - 2026</span>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>

@@ -1,12 +1,15 @@
 package com.cajero.automatico.beans;
 
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import java.io.*;
+import java.util.*;
 import java.io.Serializable;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 
-@Named("loginBean") 
+@Named("loginBean")
 @SessionScoped
 public class LoginBean implements Serializable {
 
@@ -15,22 +18,49 @@ public class LoginBean implements Serializable {
     private String cuentaIngresada;
     private String pinIngresado;
 
+    // Inyectamos el cajerobeans para pasarle el cliente que loguea
+    @Inject
+    private cajerobeans cajero;
+
     public String ingresar() {
-        // Limpiamos la cuenta de guiones y espacios por si acaso
-        String cuentaLimpia = cuentaIngresada.replace("-", "").replace("_", "").trim();
+        // 1. Cargar la lista de clientes desde el archivo
+        List<Cliente> clientes = cargarClientes();
         
-        // Ahora validamos con un número de cuenta real (16 dígitos) o el tuyo corto
-        if (("1001".equals(cuentaLimpia) || "0000000000001001".equals(cuentaLimpia)) 
-            && "1234".equals(pinIngresado)) {
-            
-            return "menu?faces-redirect=true";
+        // 2. Buscar si existe un cliente con esa cuenta y PIN
+        for (Cliente c : clientes) {
+            if (c.getNumeroCuenta().equals(cuentaIngresada) && c.getPin().equals(pinIngresado)) {
+                // 3. Si lo encuentra, se lo asignamos al Bean del cajero
+                cajero.setClienteActual(c); 
+                return "menu?faces-redirect=true";
+            }
         }
 
+        // 4. Si sale del ciclo, es que no lo encontró
         FacesContext.getCurrentInstance().addMessage(null,
-            new FacesMessage(FacesMessage.SEVERITY_ERROR,
-            "ACCESO DENEGADO", "Verifique su Tarjeta y PIN"));
-
+            new FacesMessage(FacesMessage.SEVERITY_ERROR, "ACCESO DENEGADO", "Cuenta o PIN incorrectos"));
         return null;
+    }
+
+    private List<Cliente> cargarClientes() {
+        List<Cliente> lista = new ArrayList<>();
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream("Cliente.txt")) {
+            if (is != null) {
+                Scanner scanner = new Scanner(is);
+                while (scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+                    if (!line.trim().isEmpty()) {
+                        String[] datos = line.split(",");
+                        // CORRECCIÓN AQUÍ: Agregamos datos[3] que es el nombre
+                        // Ahora el constructor recibe: Cuenta, PIN, Saldo, Nombre
+                        lista.add(new Cliente(datos[0], datos[1], Double.parseDouble(datos[2]), datos[3]));
+                    }
+                }
+                scanner.close();
+            }
+        } catch (Exception e) {
+            System.err.println("Error en LoginBean al cargar clientes: " + e.getMessage());
+        }
+        return lista;
     }
 
     // Getters y Setters

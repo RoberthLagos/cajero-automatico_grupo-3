@@ -1,56 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
 
-<h:head>
-    <title>BANK UTH | Menú Principal</title>
-    <h:outputStylesheet name="style.css" />
-</h:head>
+    <ui:define name="title">Menú Principal - BANK UTH</ui:define>
 
-<h:body>
-    <div class="main-wrapper">
-        <div class="atm-frame">
-            <div class="atm-screen">
-                <h:form id="menuForm">
-                    
-                    <div class="screen-header">
-                        <i class="pi pi-university" style="font-size: 2.5rem; color: #f1c40f;"></i>
-                        <h1 class="logo-text">BANK <span style="color:#f1c40f">UTH</span></h1>
-                        <div class="status-online">● CONEXIÓN SEGURA</div>
-                    </div>
-
-                    <div class="screen-content">
-                        <div class="user-info-card">
-                            <i class="pi pi-user" style="font-size: 1.5rem; color: #003366;"></i>
-                            <div style="text-align: left; margin-left: 10px;">
-                                <span style="display:block; font-size: 10px; color: #666;">TARJETA DETECTADA</span>
-                                <span style="font-weight: bold; color: #003366;">#{loginBean.cuentaIngresada}</span>
-                            </div>
-                        </div>
-
-                        <p:divider align="center">
-                            <span class="ui-tag">OPERACIONES</span>
-                        </p:divider>
-
-                        <div class="ui-fluid">
-                            <div class="menu-button-grid">
-                                <p:commandButton value="REALIZAR DEPÓSITO" icon="pi pi-plus-circle" styleClass="btn-menu btn-azul" />
-                                <p:commandButton value="REALIZAR RETIRO" icon="pi pi-money-bill" styleClass="btn-menu btn-verde" />
-                                <p:commandButton value="CONSULTAR SALDO" icon="pi pi-wallet" styleClass="btn-menu btn-gris" />
-                                <p:commandButton value="SALIR" action="index?faces-redirect=true" icon="pi pi-power-off" styleClass="btn-menu btn-rojo" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="screen-footer">
-                        <span>SISTEMA PROTEGIDO POR BANK UTH SECURE™</span>
-                    </div>
-                </h:form>
+    <ui:define name="content">
+        <div class="user-info-card" style="margin-bottom: 20px;">
+            <i class="pi pi-credit-card" style="font-size: 1.5rem; color: #003366;"></i>
+            <div style="text-align: left; margin-left: 10px;">
+                <span style="display:block; font-size: 10px; color: #666;">CUENTA ACTIVA</span>
+                <span style="font-weight: bold; color: #003366;">#{cajerobeans.clienteActual.numeroCuenta}</span>
             </div>
         </div>
-    </div>
-</h:body>
-</html>
+
+        <p:divider align="center">
+            <span class="ui-tag">SELECCIONE UNA OPERACIÓN</span>
+        </p:divider>
+
+        <div class="ui-fluid">
+            <div class="menu-button-grid">
+                <p:commandButton value="REALIZAR DEPÓSITO" 
+                                 action="deposito?faces-redirect=true"
+                                 icon="pi pi-plus-circle" 
+                                 styleClass="btn-menu btn-azul" />
+
+                <p:commandButton value="REALIZAR RETIRO" 
+                                 action="retiro?faces-redirect=true"
+                                 icon="pi pi-money-bill" 
+                                 styleClass="btn-menu btn-verde" />
+
+                <p:commandButton value="CONSULTAR SALDO" 
+                                 update=":baseForm:messages"
+                                 icon="pi pi-wallet" 
+                                 styleClass="btn-menu btn-gris">
+                    <p:confirm header="Consulta de Saldo" 
+                               message="Su saldo actual es: L #{cajerobeans.saldoActual}" 
+                               icon="pi pi-info-circle" />
+                </p:commandButton>
+
+                <p:commandButton value="SALIR / TERMINAR" 
+                                 action="index?faces-redirect=true" 
+                                 icon="pi pi-power-off" 
+                                 styleClass="btn-menu btn-rojo" />
+            </div>
+        </div>
+
+        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+            <p:commandButton value="Cerrar" type="button" styleClass="ui-confirmdialog-yes" />
+        </p:confirmDialog>
+    </ui:define>
+
+</ui:composition>
