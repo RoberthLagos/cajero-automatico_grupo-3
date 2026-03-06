@@ -5,18 +5,18 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui">
 
-    <ui:define name="title">Depósito de Efectivo - BANK UTH</ui:define>
+    <ui:define name="title">Retiro de Efectivo - BANK UTH</ui:define>
 
     <ui:define name="content">
         <div style="text-align: center; padding: 10px;">
             <div style="margin-bottom: 15px;">
-                <h2 style="color: #0f172a; margin: 0;">DEPÓSITO DE EFECTIVO</h2>
-                <span style="color: #64748b; font-size: 0.8rem;">Ingrese el monto que desea acreditar a su cuenta</span>
+                <h2 style="color: #0f172a; margin: 0;">RETIRO DE EFECTIVO</h2>
+                <span style="color: #64748b; font-size: 0.8rem;">Ingrese el monto que desea retirar de su cuenta</span>
             </div>
 
 
             <div style="text-align: left; margin-top: 15px;">
-                <p:outputLabel for="montoDep" value="Monto a Depositar" style="font-weight: bold; color: #334155;"/>
+                <p:outputLabel for="montoDep" value="Monto a Retirar" style="font-weight: bold; color: #334155;"/>
                 <p:inputNumber id="montoDep" value="#{cajerobeans.montoTransaccion}" 
                                symbol="L " placeholder="0.00" 
                                style="width: 100%; margin-top: 5px; margin-bottom: 15px;"/>
@@ -28,8 +28,8 @@
             </div>
 
             <div style="margin-top: 25px;">
-                <p:commandButton value="PROCESAR DEPÓSITO" 
-                                 action="#{cajerobeans.depositar()}"
+                <p:commandButton value="PROCESAR RETIRO" 
+                                 action="#{cajerobeans.retirar()}"
                                  update="@form"
                                  style="width:100%; height: 50px; background: #004b8d; border: none; border-radius: 12px; font-weight: bold; color: white;"/>
                 

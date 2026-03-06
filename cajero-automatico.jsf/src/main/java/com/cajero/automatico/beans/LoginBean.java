@@ -18,7 +18,6 @@ public class LoginBean implements Serializable {
     private String cuentaIngresada;
     private String pinIngresado;
 
-    // Inyectamos el cajerobeans para pasarle el cliente que loguea
     @Inject
     private cajerobeans cajero;
 
@@ -50,8 +49,7 @@ public class LoginBean implements Serializable {
                     String line = scanner.nextLine();
                     if (!line.trim().isEmpty()) {
                         String[] datos = line.split(",");
-                        // CORRECCIÓN AQUÍ: Agregamos datos[3] que es el nombre
-                        // Ahora el constructor recibe: Cuenta, PIN, Saldo, Nombre
+                        // Constructor recibe: Cuenta, PIN, Saldo, Nombre
                         lista.add(new Cliente(datos[0], datos[1], Double.parseDouble(datos[2]), datos[3]));
                     }
                 }

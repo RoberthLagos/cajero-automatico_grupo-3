@@ -33,7 +33,7 @@ public class cajerobeans implements Serializable {
                     String line = scanner.nextLine();
                     if (!line.trim().isEmpty()) {
                         String[] datos = line.split(",");
-                        // CORRECCIÓN: Ahora pasamos 4 datos al constructor: Cuenta, PIN, Saldo, Nombre
+                       
                         listaClientes.add(new Cliente(datos[0], datos[1], Double.parseDouble(datos[2]), datos[3]));
                     }
                 }

@@ -5,13 +5,13 @@ import java.io.Serializable;
 public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
     
-    // Atributos requeridos por la tarea
+    // Atributos 
     private String numeroCuenta;
     private String pin;
     private double saldo;
-    private String nombre; // Nuevo: Nombre del dueño de la cuenta
+    private String nombre; 
 
-    // Constructor actualizado para recibir 4 parámetros
+    // Constructor para recibir 4 parámetros
     public Cliente(String numeroCuenta, String pin, double saldo, String nombre) {
         this.numeroCuenta = numeroCuenta;
         this.pin = pin;
@@ -19,7 +19,7 @@ public class Cliente implements Serializable {
         this.nombre = nombre;
     }
 
-    // Getters y Setters necesarios para la lógica de negocio
+    // Getters y Setters
     public String getNumeroCuenta() { return numeroCuenta; }
     public void setNumeroCuenta(String numeroCuenta) { this.numeroCuenta = numeroCuenta; }
 
@@ -29,7 +29,7 @@ public class Cliente implements Serializable {
     public double getSaldo() { return saldo; }
     public void setSaldo(double saldo) { this.saldo = saldo; }
 
-    // Nuevo Getter y Setter para el nombre
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
 }
+

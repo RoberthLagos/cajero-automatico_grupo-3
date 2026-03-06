@@ -1,4 +1,4 @@
-1001,1234,5000.0,Juan Perez
+1001,1234,5400.0,Juan Perez
 1002,5678,2500.0,Maria Rodriguez
 1003,1111,100.0,Carlos Lopez
 1004,2222,8000.0,Ana Martinez
