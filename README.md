@@ -27,7 +27,7 @@ Paso 2: Menú de Operaciones Una vez dentro, el panel es súper intuitivo. Puede
 
 
 Realizar Depósito: Ingresas el monto y listo.
- ![Realizar Depósito](img/deposito.png)
+[Realizar Depósito](img/deposito.png)
  
 
 Realizar Retiro: Tú eliges cuánto sacar.
