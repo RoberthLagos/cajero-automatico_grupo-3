@@ -37,7 +37,7 @@ Realizar Depósito: Ingresas el monto y listo.
 
 Realizar Retiro: Tú eliges cuánto sacar.
 
- ![Realizar Retiro](img/retito.png)
+ ![Realizar Retiro](img/retiro.png)
 
 
 Consultar Saldo: Usamos una ventana emergente (modal) para que veas tu dinero rápido sin que se recargue toda la página.
