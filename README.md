@@ -1,39 +1,43 @@
 # cajero-automatico_grupo-3
 
-🏦 Bank UTH - Proyecto de Cajero Automático
-Desarrollado por: Grupo #3
+🏦 Bank UTH - Cajero Automático (Grupo #3)
+¡Hola! Este es nuestro proyecto de simulación de un Cajero Automático, desarrollado para la clase. Quisimos crear un sistema que no solo funcione, sino que se sienta real, eficiente y, sobre todo, seguro.
 
-Este sistema es una simulación avanzada de un cajero automático diseñada para gestionar operaciones financieras básicas de forma segura y eficiente.
+¿Cómo hacerlo funcionar? (Instrucciones de ejecución)
+Para que el proyecto corra en tu computadora, solo sigue estos pasos rápidos:
 
-🛠️ Instrucciones de Uso
-Para interactuar con el sistema, siga este flujo de operación:
+Importar el proyecto: Abre tu IDE favorito (nosotros usamos Eclipse/IntelliJ) e importa la carpeta como un proyecto Maven existente.
 
-Inicio de Sesión: Ingrese su número de tarjeta y PIN en la pantalla de bienvenida.
+Librerías: Haz clic derecho sobre el proyecto y selecciona Maven -> Update Project (o dale a Install) para que se descarguen las dependencias de PrimeFaces.
 
-Selección de Operación: Elija una de las opciones del menú principal según su necesidad.
+Servidor: Asegúrate de tener configurado un servidor como GlassFish o Payara.
 
-Confirmación de Seguridad: Para operaciones de movimiento de dinero (Retiro/Depósito), el sistema le solicitará su PIN para validar la transacción.
+¡A correr!: Dale "Run" al servidor y abre en tu navegador la dirección:
+http://localhost:9091/cajero-automatico.jsf/index.xhtml
 
-📋 Funcionalidades del Sistema
-1️⃣ Autenticación Segura
-El sistema cuenta con una pantalla de inicio donde el usuario debe ingresar su número de tarjeta y PIN. Incluye un indicador de conexión encriptada SSL de 256-bit para mayor realismo.
+¿Qué puedes hacer en el sistema?
+Aquí te explicamos cómo interactuar con el aplicativo:
 
-2️⃣ Menú Principal de Operaciones
-Una vez identificado el usuario, se despliega el panel con las transacciones disponibles de forma clara e intuitiva:
+Paso 1: Inicio de Sesión Entra con tu número de tarjeta y PIN. Verás que agregamos un indicador de encriptación SSL de 256-bit para darle ese toque de realismo profesional.
+![Pantalla de Login](img/login.png)
 
-Realizar Depósito.
 
-Realizar Retiro.
+Paso 2: Menú de Operaciones Una vez dentro, el panel es súper intuitivo. Puedes elegir entre:
+![Menú Principal](img/menu.png)
 
-Consultar Saldo.
 
-Salir / Terminar sesión.
+Realizar Depósito: Ingresas el monto y listo.
+ ![Realizar Depósito](img/deposito.png)
+ 
 
-3️⃣ Realizar Depósito
-Permite al usuario ingresar un monto específico y confirmar la transacción mediante su PIN de seguridad para asegurar la integridad de la operación.
+Realizar Retiro: Tú eliges cuánto sacar.
+ ![Realizar Retiro](img/retito.png)
+ 
 
-4️⃣ Retiro de Efectivo
-El usuario define la cantidad a retirar. El sistema solicita nuevamente el PIN como medida de doble factor de seguridad antes de procesar el egreso de dinero.
+Consultar Saldo: Usamos una ventana emergente (modal) para que veas tu dinero rápido sin que se recargue toda la página.
+![Consulta de Saldo](img/saldo.png)
 
-5️⃣ Consulta de Saldo
-Muestra una ventana emergente (modal) con el saldo actual disponible en la cuenta de manera rápida y sencilla sin recargar la página.
+
+Paso 3: Seguridad Extra Para los retiros y depósitos, el sistema te pedirá confirmar con tu PIN. Lo hicimos así para simular un doble factor de seguridad.
+
+
