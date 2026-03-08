@@ -1,7 +1,7 @@
 # cajero-automatico_grupo-3
 
 🏦 Bank UTH - Cajero Automático (Grupo #3)
-¡Hola! Este es nuestro proyecto de simulación de un Cajero Automático, desarrollado para la clase. Quisimos crear un sistema que no solo funcione, sino que se sienta real, eficiente y, sobre todo, seguro.
+Este es nuestro proyecto de simulación de un Cajero Automático, desarrollado para la clase. Quisimos crear un sistema que no solo funcione, sino que se sienta real, eficiente y, sobre todo, seguro.
 
 ¿Cómo hacerlo funcionar? (Instrucciones de ejecución)
 Para que el proyecto corra en tu computadora, solo sigue estos pasos rápidos:
@@ -10,7 +10,7 @@ Importar el proyecto: Abre tu IDE favorito (nosotros usamos Eclipse/IntelliJ) e 
 
 Librerías: Haz clic derecho sobre el proyecto y selecciona Maven -> Update Project (o dale a Install) para que se descarguen las dependencias de PrimeFaces.
 
-Servidor: Asegúrate de tener configurado un servidor como GlassFish o Payara.
+Servidor: Asegúrate de tener configurado un servidor como Tomcat.
 
 ¡A correr!: Dale "Run" al servidor y abre en tu navegador la dirección:
 http://localhost:9091/cajero-automatico.jsf/index.xhtml
@@ -32,7 +32,6 @@ Paso 2: Menú de Operaciones Una vez dentro, el panel es súper intuitivo. Puede
 Realizar Depósito: Ingresas el monto y listo.
 
 [Realizar Depósito](img/deposito.png)
-
 
 
 Realizar Retiro: Tú eliges cuánto sacar.
