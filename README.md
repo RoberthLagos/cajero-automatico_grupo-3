@@ -15,26 +15,21 @@ Servidor: Asegúrate de tener configurado un servidor como GlassFish o Payara.
 ¡A correr!: Dale "Run" al servidor y abre en tu navegador la dirección:
 http://localhost:9091/cajero-automatico.jsf/index.xhtml
 
-¿Qué puedes hacer en el sistema?
-Aquí te explicamos cómo interactuar con el aplicativo:
-
-Paso 1: Inicio de Sesión Entra con tu número de tarjeta y PIN. Verás que agregamos un indicador de encriptación SSL de 256-bit para darle ese toque de realismo profesional.
+**Paso 1: Inicio de Sesión**
+Entra con tu número de tarjeta y PIN. Agregamos un indicador de encriptación SSL de 256-bit para realismo profesional.
 ![Pantalla de Login](img/login.png)
 
-
-Paso 2: Menú de Operaciones Una vez dentro, el panel es súper intuitivo. Puedes elegir entre:
+**Paso 2: Menú de Operaciones**
+El panel es intuitivo y permite las siguientes transacciones:
 ![Menú Principal](img/menu.png)
 
+* **Realizar Depósito:** Ingresas el monto y confirmas.
+![Realizar Depósito](img/deposito.png)
 
-Realizar Depósito: Ingresas el monto y listo.
-[Realizar Depósito](img/deposito.png)
- 
+* **Realizar Retiro:** Defines la cantidad a retirar con validación de PIN.
+![Realizar Retiro](img/retito.png)
 
-Realizar Retiro: Tú eliges cuánto sacar.
- ![Realizar Retiro](img/retito.png)
- 
-
-Consultar Saldo: Usamos una ventana emergente (modal) para que veas tu dinero rápido sin que se recargue toda la página.
+* **Consultar Saldo:** Usamos una ventana modal para ver el saldo rápido.
 ![Consulta de Saldo](img/saldo.png)
 
 
