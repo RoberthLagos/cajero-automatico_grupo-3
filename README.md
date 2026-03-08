@@ -46,13 +46,3 @@ Consultar Saldo: Usamos una ventana emergente (modal) para que veas tu dinero r�
 
 
 Paso 3: Seguridad Extra Para los retiros y depósitos, el sistema te pedirá confirmar con tu PIN. Lo hicimos así para simular un doble factor de seguridad.
-
-
-
-![Pantalla de Login](img/login.png)
-![Menú Principal](img/menu.png)
-![Realizar Depósito](img/deposito.png)
-![Realizar Retiro](img/retiro.png)
-![Consulta de Saldo](img/saldo.png)
-
-
